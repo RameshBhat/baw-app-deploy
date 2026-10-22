@@ -1,0 +1,30 @@
+server:
+  base_url: https://<host-name>/baw-bawins1
+
+app:
+  # Workflow app acronym, used to find the default snapshot and sync env vars
+  container: APP
+
+auth:
+  username: admin
+  # Password is read from this environment variable, or prompted for if unset
+  password_env: PASSWORD
+
+login:
+  refresh_groups: true
+  requested_lifetime: 7200
+
+install:
+  inactive: false
+  caseDosName: BAWDOS
+  caseProjectArea: target_env
+  caseOverwrite: false
+
+package:
+  # Folder to search for the latest zip (relative to the script folder)
+  directory: .
+  pattern: "*.zip"
+
+poll:
+  interval_seconds: 10
+  timeout_seconds: 1800
